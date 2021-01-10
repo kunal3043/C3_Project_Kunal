@@ -74,5 +74,14 @@ class RestaurantTest {
         order_total("Vegetable lasagne","Sweet corn soup");
         assertNotEquals(388,restaurant.order_total);
     }
+    @Test
+    public void calculated_total_not_equal_to_expected_total_should_throw_exception() {
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        Restaurant restaurant= findRestaurantByName("Amelie's cafe");
+        order_total("Vegetable lasagne","Sweet corn soup");
+        assertEquals(388,restaurant.order_total);
+        return true;
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
